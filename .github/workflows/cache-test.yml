@@ -14,12 +14,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Prime cache-a3a8fa6
-        id: cache-step
+        id: prime-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: cache-a3a8fa6
-        continue-on-error: true
 
       - name: Show cache result
-        run: echo "Cache hit/miss: ${{ steps.cache-step.outputs.cache-hit }}"
+        run: echo "Cache hit/miss: ${{ steps.prime-cache.outputs.cache-hit }}"
