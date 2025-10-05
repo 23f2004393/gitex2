@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Prime cache-a3a8fa6  # display name
-        id: prime-cache              # THIS is the id to reference
+        id: prime-cache-a3a8fa6             # THIS is the id to reference
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
