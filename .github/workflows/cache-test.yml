@@ -13,16 +13,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Prime cache-a3a8fa6  # display name
-        id: prime-cache         # THIS is the id to reference
+      - name: prime-cache-a3a8fa6   # Step name as requested
+        id: prime_cache              # ID used to reference outputs
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: cache-a3a8fa6
+          key: cache-a3a8fa6        # Cache key as requested
 
-      - name: Show cache result
+      - name: Echo cache hit/miss
         run: |
-          if [ "${{ steps.prime-cache.outputs.cache-hit }}" == "true" ]; then
+          if [ "${{ steps.prime_cache.outputs.cache-hit }}" == "true" ]; then
             echo "Cache hit"
           else
             echo "Cache miss"
