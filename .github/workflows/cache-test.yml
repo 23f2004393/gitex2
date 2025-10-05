@@ -21,4 +21,9 @@ jobs:
           key: cache-a3a8fa6
 
       - name: Show cache result
-        run: echo "Cache hit/miss: ${{ steps.prime-cache.outputs.cache-hit || 'false' }}"
+        run: |
+          if [ "${{ steps.prime-cache.outputs.cache-hit }}" == "true" ]; then
+            echo "Cache hit"
+          else
+            echo "Cache miss"
+          fi
